@@ -30,8 +30,8 @@
 	</bean>
 	
 	<jdbc:initialize-database ignore-failures="DROPS">
-		<jdbc:script location="classpath:quartz-tables-mysql.sql"/>
-		<!-- <jdbc:script location="classpath:quartz-jobs-history.sql" /> -->		
+		<jdbc:script location="classpath:db/quartz-tables-mysql.sql"/>
+		<!-- <jdbc:script location="classpath:db/quartz-jobs-history.sql" /> -->		
 	</jdbc:initialize-database>
 	
 	<!-- job -->
@@ -111,7 +111,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="applicationContextSchedulerContextKey" value="applicationContext" />
 		<property name="taskExecutor">
-			<bean class="org.springframework.scheduling.concurrent,ThreadPoolExecutorFactoryBean">
+			<bean class="org.springframework.scheduling.concurrent.ThreadPoolExecutorFactoryBean">
 				<property name="threadNamePrefix" value="PaymentScheduler-" />
 				<property name="corePoolSize" value="10" />
 				<property name="maxPoolSize" value="20" />

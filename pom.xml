@@ -11,8 +11,8 @@
 
 	<properties>
 		<jdk.v>1.8</jdk.v>
-		<spring.v>4.0.2.RELEASE</spring.v>
-		<quartz.v>2.2.1</quartz.v>
+		<spring.v>4.3.8.RELEASE</spring.v> <!-- 4.0.2 -->
+		<quartz.v>2.3.0</quartz.v> <!-- 2.2.1 -->
 		<spring.data.v>1.4.1.RELEASE</spring.data.v>
 		<!-- H2 database version -->
 		<!--	<h2.v>1.4.178</h2.v>	-->

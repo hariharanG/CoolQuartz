@@ -9,15 +9,15 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Schema quartz-db
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `quartz-db` ;
-CREATE SCHEMA IF NOT EXISTS `quartz-db` DEFAULT CHARACTER SET latin1 ;
+-- DROP SCHEMA IF EXISTS `quartz-db` ;
+-- CREATE SCHEMA IF NOT EXISTS `quartz-db` DEFAULT CHARACTER SET latin1 ;
 SHOW WARNINGS;
 USE `quartz-db` ;
 
 -- -----------------------------------------------------
 -- Table `qrtz_blob_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_blob_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_blob_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_blob_triggers` (
@@ -33,7 +33,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_calendars`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_calendars` ;
+-- DROP TABLE IF EXISTS `qrtz_calendars` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_calendars` (
@@ -49,7 +49,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_job_details`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_job_details` ;
+-- DROP TABLE IF EXISTS `qrtz_job_details` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_job_details` (
@@ -72,7 +72,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_triggers` (
@@ -100,14 +100,13 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
 SHOW WARNINGS;
-CREATE INDEX `FK_QRTZ_TRIGGERS_QRTZ_JOB_DETAILS` ON `qrtz_triggers` (`SCHED_NAME` ASC, `JOB_NAME` ASC, `JOB_GROUP` ASC);
-
-SHOW WARNINGS;
+-- CREATE INDEX `FK_QRTZ_TRIGGERS_QRTZ_JOB_DETAILS` ON `qrtz_triggers` (`SCHED_NAME` ASC, `JOB_NAME` ASC, `JOB_GROUP` ASC);
+-- SHOW WARNINGS;
 
 -- -----------------------------------------------------
 -- Table `qrtz_cron_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_cron_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_cron_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_cron_triggers` (
@@ -129,7 +128,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_fired_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_fired_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_fired_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_fired_triggers` (
@@ -155,7 +154,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_job_history`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_job_history` ;
+-- DROP TABLE IF EXISTS `qrtz_job_history` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_job_history` (
@@ -187,7 +186,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_locks`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_locks` ;
+-- DROP TABLE IF EXISTS `qrtz_locks` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_locks` (
@@ -202,7 +201,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_paused_trigger_grps`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_paused_trigger_grps` ;
+-- DROP TABLE IF EXISTS `qrtz_paused_trigger_grps` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_paused_trigger_grps` (
@@ -217,7 +216,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_scheduler_state`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_scheduler_state` ;
+-- DROP TABLE IF EXISTS `qrtz_scheduler_state` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_scheduler_state` (
@@ -234,7 +233,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_simple_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_simple_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_simple_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_simple_triggers` (
@@ -257,7 +256,7 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `qrtz_simprop_triggers`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `qrtz_simprop_triggers` ;
+-- DROP TABLE IF EXISTS `qrtz_simprop_triggers` ;
 
 SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `qrtz_simprop_triggers` (
