@@ -5,8 +5,11 @@
     <artifactId>cool-quartz</artifactId>
     <version>1.0</version>
   </parent>
-  <groupId>com.cool.quartz</groupId>
+  
   <artifactId>cool-quartz-schedule</artifactId>
   <name>CoolQuartzSchedule</name>
   <description>Quartz Scheduling</description>
-</project>
+  
+  <packaging>jar</packaging>
+  
+  </project>

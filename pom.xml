@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<groupId>cool.hari</groupId>
 	<artifactId>cool-quartz</artifactId>
 	<version>1.0</version>
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
+	<name>CoolQuartz</name>
+  	<description>Quartz Scheduling</description>
 
 	<properties>
 		<jdk.v>1.8</jdk.v>
@@ -18,7 +18,7 @@
 		<!--	<h2.v>1.4.178</h2.v>	-->
 		<mysql.v>5.1.26</mysql.v>
 		<spring.mybatis.v>1.0.1</spring.mybatis.v>
-		<jackson.v>2.3.2</jackson.v>
+		<jackson.v>2.8.7</jackson.v>
 		<slf4j.v>1.6.1</slf4j.v>
 		<!-- junit version -->
 		<!--	<junit.v>4.12</junit.v>		-->
@@ -30,6 +30,7 @@
 		<module>cool-quartz-core</module>		
 		<module>cool-quartz-schedule</module>
 		<!-- <module>cool-quartz-ui</module> -->
+		<module>cool-quartz-web</module>
 	</modules>
 	
 	<!--  commonly used dependencies -->

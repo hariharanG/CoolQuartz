@@ -5,8 +5,27 @@
     <artifactId>cool-quartz</artifactId>
     <version>1.0</version>
   </parent>
-  <groupId>com.cool.quartz</groupId>
+  
   <artifactId>cool-quartz-core</artifactId>
   <name>CoolQuartzCore</name>
   <description>Core Support</description>
+  <packaging>jar</packaging>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>cool.hari</groupId>
+  		<artifactId>cool-quartz-schedule</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.sf.jopt-simple</groupId>
+  		<artifactId>jopt-simple</artifactId>
+  		<version>4.9</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.core</groupId>
+  		<artifactId>jackson-databind</artifactId>
+  		<version>${jackson.v}</version>
+  	</dependency>
+  </dependencies>
 </project>
