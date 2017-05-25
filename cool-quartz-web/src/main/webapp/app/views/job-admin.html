@@ -1,0 +1,47 @@
+<div class="row"></div>
+<div class="clearfix"></div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="btn btn-primary btn-flat btn-sm" ng-click="refresh()">
+			Refresh</div>
+		<div class="box">
+			<div class="box-header">
+				<h3 class="box-title">Scheduler Administration</h3>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<div ng-repeat="(scheduler, trigs) in triggers">
+					<table id="example2" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Action</th>
+								<th>SchedulerName</th>
+								<th>JobName</th>
+								<th>JobGroup</th>
+								<th>TriggerName</th>
+								<th>TriggerGroup</th>
+								<th>PreFiredTime</th>
+								<th>Next Fire Time</th>
+								<th>Trigger Summary</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="trigger in trigs">
+								<td><div class="btn btn-warning btn-flat " ng-click="forceRun(scheduler,trigger.jobGroup, trigger.jobName)">Force Run</div></td>
+								<td>{{scheduler}}</td>
+								<td>{{trigger.jobName}}</td>
+								<td>{{trigger.jobGroup}}</td>
+								<td>{{trigger.name}}</td>
+								<td>{{trigger.group}}</td>
+								<td>{{ trigger.previousFireTime | date:"yyyy-MM-dd HH:mm:ss.SSS " }}</td>
+								<td>{{ trigger.nextFireTime | date:"yyyy-MM-dd HH:mm:ss.SSS " }}</td>
+								<td ng-if="trigger.complete == null "> {{ trigger.cronExpression}}</td>
+								<td ng-if="trigger.complete != null ">Running this Job</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

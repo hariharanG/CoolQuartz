@@ -70,7 +70,12 @@ public class JobMonitorController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		return new ModelAndView("index.jsp");
+		return new ModelAndView("index.htm");
+	}
+	
+	@RequestMapping("/theme")
+	public ModelAndView themeB4A4(){
+		return new ModelAndView("index.html");
 	}
 	
 	
