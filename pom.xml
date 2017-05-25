@@ -11,7 +11,7 @@
 
 	<properties>
 		<jdk.v>1.8</jdk.v>
-		<spring.v>4.3.8.RELEASE</spring.v> <!-- 4.0.2 -->
+		<spring.v>4.3.8.RELEASE</spring.v> <!-- 4.0.2.RELEASE -->
 		<quartz.v>2.3.0</quartz.v> <!-- 2.2.1 -->
 		<spring.data.v>1.4.1.RELEASE</spring.data.v>
 		<!-- H2 database version -->
@@ -138,13 +138,28 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId> <!-- comment this if necessary -->
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<source>${jdk.v}</source>
 					<target>${jdk.v}</target>
 				</configuration>
 			</plugin>
+			<!-- Spring boot maven plugin -->
+			<!-- 
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin> 
+			-->
 		</plugins>
 	</build>
-
+	<!-- 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.4.RELEASE</version>
+		<relativePath/>
+	</parent> 
+	-->
 </project>

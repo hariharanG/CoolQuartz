@@ -1,0 +1,27 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cool.quartz.history.dao.JobHistoryMapper">
+	
+	<resultMap type="cool.quartz.history.model.JobHistoryEntity" id="jobHistoryEntityMap">
+		<id column="ENTRY_ID" property="entryId" />
+		<result column="HOSTNAME" property="hostname" />
+		<result column="IP_ADDR" property="ipAddress" />
+		<result column="SCHED_NAME" property="schedulerName" />
+		<result column="INSTANCE_NAME" property="instanceName" />
+		<result column="JOB_NAME" property="jobName" />
+		<result column="JOB_GROUP" property="jobGroup" />
+		<result column="TRIGGER_NAME" property="triggerName" />
+		<result column="TRIGGER_GROUP" property="triggerGroup" />
+		<result column="FIRED_TIME" property="firedTime" />	
+		<result column="NEXT_FIRE_TIME" property="nextFiredTime" />
+		<result column="PRIORITY" property="priority" />
+		<result column="IS_NONCONCURRENT" property="isNonConcurrent" />
+		<result column="REQUESTS_RECOVERY" property="requestRecovery" />
+		<result column="RESULT" property="result" />
+		<result column="EXCEPTIONS" property="exceptions" />
+	</resultMap>
+	
+	<select id="selectAll" resultMap="jobHistoryEntityMap">
+		SELECT * FROM QRTZ_JOB_HISTORY ORDER BY FIRED_TIME DESC
+	</select>
+	
+</mapper>

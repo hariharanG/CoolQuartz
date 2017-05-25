@@ -14,15 +14,25 @@
   <name>CoolQuartzWeb</name>
   <description>Quartz Web UI</description>
   <!-- <url>http://maven.apache.org</url> -->
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  
   <build>
     <finalName>cool-quartz-web</finalName>
   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>cool.hari</groupId>
+  		<artifactId>cool-quartz-core</artifactId>
+  		<version>1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  		<version>${spring.v}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>${spring.v}</version>
+  	</dependency>
+  </dependencies>
 </project>
