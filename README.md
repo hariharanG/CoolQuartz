@@ -3,14 +3,14 @@
 
 
 ## Requirements
- Quartz Monitoring and Management Tool is simply called CoolQuartz.
+ Quartz *Monitoring* and *Management* Tool is simply called **CoolQuartz**.
  
 
 ## Modules
 ` CoolQuartz is a multi module maven application
-* Web UI 
-* Core - Quartz administration
-* Schedule - Simple Quartz scheduler
+- Web UI 
+- Core - Quartz administration
+- Schedule - Simple Quartz scheduler
 
 ## Technologies
 * Spring-4.x or above
@@ -21,6 +21,8 @@
 
 
 
-# Work in progress ( Coming soon )
+### Work in progress 
 
-# Sorry for the inconvenience!
+## Coming soon ....
+
+
