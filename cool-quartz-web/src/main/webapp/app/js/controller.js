@@ -2,12 +2,16 @@
 
 angular.module('coolApp.controller', [])
 	.controller('JobHistoryController', ['$scope','$http', function($scope, $http){
+		
+		
+		
 		$scope.fetchAll = function(){
 			$http({method:'GET', url:'~cool-quartz/history'})
 				.success(function(data, status, headers, config){
 					$scope.result = data ;
 					$scope.totalJobHistory = $scope.result.length;
 					$scope.histories = $scope.result.content;
+					$("#example2").DataTable();					
 				})
 				.error(function(data, status, headers, config){
 					//log('Ajax Error ');
@@ -19,7 +23,8 @@ angular.module('coolApp.controller', [])
 		}
 		
 		$scope.fetchAll();
-	
+		
+		
 	}])
 	.controller('JobAdminController', ['$scope', '$http', function($scope, $http){
 		
@@ -51,4 +56,5 @@ angular.module('coolApp.controller', [])
 				});				
 		}
 		$scope.fetchAll();
+		
 	}]);

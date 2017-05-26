@@ -65,7 +65,7 @@ public class JobMonitorController {
 	public void forceExecutable(@PathVariable("schedulerName") final String schedulerName,
 								@PathVariable("jobGroup") final String jobGroup,
 								@PathVariable("jobName") final String jobName ) throws Exception{
-		jobAdminService.forceExecute(schedulerName, jobGroup, jobName);
+		jobAdminService.forceExecute(schedulerName, jobName, jobGroup);
 	}
 	
 	@RequestMapping("/")
