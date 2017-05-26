@@ -1,45 +1,32 @@
 <div class="row"></div>
 <div class="clearfix"></div>
 <div class="row" >
-	<div class="col-md-12">
+	<div class="col-md-12">		
 		<div class="btn btn-primary btn-flat btn-sm" ng-click="refresh()">
-			Refresh</div>
+			<i class="glyphicon glyphicon-refresh"></i>
+		</div>
 		<div class="box">
 			<div class="box-header">
-				<h3 class="box-title">Monitoring Job Histories</h3>
+				<h1 class="box-title" align="center">Monitoring Job Histories</h1>
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				<table id="example2" class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th>Entry ID</th>
-							<th>Hostname</th>
-							<th>IpAddress</th>
-							<th>SchedulerName</th>
-							<th>JobName</th>
-							<th>JobGroup</th>
-							<th>TriggerName</th>
-							<th>TriggerGroup</th>
-							<th>Fired on</th>
-							<th>Result</th>							
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="history in histories">
-							<td>{{history.entryId}}</td>
-							<td>{{history.hostname}}</td>
-							<td>{{history.ipAddress}}</td>
-							<td>{{history.schedulerName}}</td>
-							<td>{{history.jobName}}</td>
-							<td>{{history.jobGroup}}</td>
-							<td>{{history.triggerName}}</td>
-							<td>{{history.triggerGroup}}</td>
-							<td>{{history.firedTime}}</td>
-							<td>{{history.result}}</td>
-						</tr>
-					</tbody>
+				
+				<table ng-table="tableParams" class="table table-bordered table-striped">
+					<tr ng-repeat="history in $data track by history.entryId ">
+						<td data-title="'Entry ID'" sortable="'entryId'"> {{history.entryId}}	</td>
+						<td data-title="'Hostname'" sortable="'hostname'"> {{history.hostname}} 	</td>
+						<td data-title="'IP-Address'" sortable="'ipAddress'"> {{history.ipAddress}} 	</td>
+						<td data-title="'schedulerName'" sortable="'schedulerName'"> {{history.schedulerName}} 	</td>
+						<td data-title="'jobName'" sortable="'jobName'">{{history.jobName}}</td>
+						<td data-title="'jobGroup'" sortable="'jobGroup'">{{history.jobGroup}}</td>
+						<td data-title="'triggerName'" sortable="'triggerName'">{{history.triggerName}}</td>
+						<td data-title="'triggerGroup'" sortable="'ipAddress'">{{history.triggerGroup}}</td>
+						<td data-title="'firedTime'" sortable="'ipAddress'">{{history.firedTime}}</td>
+						<td data-title="'result'" sortable="'ipAddress'">{{history.result}}</td>
+					</tr>
 				</table>
+				
 			</div>
 		</div>
 	</div>
