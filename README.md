@@ -3,9 +3,8 @@
 
 
 ## Requirements
-* Java 8
-* Spring 4.x
-* Quartz 2.x
+ Quartz Monitoring and Management Tool is simply called CoolQuartz.
+ 
 
 ## Modules
 ` CoolQuartz is a multi module maven application
