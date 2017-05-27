@@ -303,7 +303,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active"><a href="#"><i class="fa fa-home text-aqua"></i> Dashboard</a></li>
             <li><a href="#/cool-job-admin"><i class="fa fa-user text-green"></i> Job Admin </a></li>
             <li><a href="#/cool-job-history"><i class="fa fa-history text-blue"></i> Job Monitoring</a></li>            
           </ul>
@@ -323,10 +323,10 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <small>Control panel</small>
+        <small><i class="fa fa-home text-aqua"></i></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -335,16 +335,19 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6" ng-controller="JobHistoryController as jobHist">
+        <div class="col-lg-3 col-xs-6" >
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner" >
-              <h3>150</h3>
+              <h3>
+              	<span ng-if="totalJobHistories > 100000"  ng-cloak> {{totalJobHistories/100000}} lakhs </span>
+              	<span ng-if="totalJobHistories <= 100000" ng-cloak>{{totalJobHistories}}</span>
+              </h3>
 
               <p>Job Histories</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa fa-history"></i>
             </div>
             <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>

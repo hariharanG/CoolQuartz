@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('coolApp.controller', [])
-	.controller('JobHistoryController', ['$scope','$http','NgTableParams', '$resource', '$timeout','$filter', function($scope, $http, ngTableParams, $resource,$timeout,$filter){	
+	.controller('JobHistoryController', ['$rootScope','$scope','$http','NgTableParams', '$resource', '$timeout','$filter', function($rootScope,$scope, $http, ngTableParams, $resource,$timeout,$filter){	
 		
 		
 		$scope.fetchAll = function(){
@@ -35,7 +35,9 @@ angular.module('coolApp.controller', [])
 		                    // update table params
 		                    params.total(data.total);
 		                    // For dashboard
-		                    $scope.totalJobHistories = data.total;
+		                    // console.log(data)
+		                    $rootScope.totalJobHistories = data.total;
+		                    console.log('rootScope '+$rootScope.totalJobHistories )
 		                    // set new data
 		                    var orderedData = params.sorting() ?
 		                                      $filter('orderBy')(data.content, params.orderBy()) :
@@ -52,6 +54,7 @@ angular.module('coolApp.controller', [])
 			
 		$scope.refresh = function(){
 			$scope.fetchAll();
+			$scope.tableParams.reload();
 		}
 		
 		$scope.fetchAll();		
@@ -117,6 +120,7 @@ angular.module('coolApp.controller', [])
 				.error(function(data, status, h, c){
 					// log
 				});				
+			$scope.fetchAll();
 		}
 		$scope.fetchAll();
 		
