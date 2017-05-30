@@ -3,7 +3,7 @@
 angular.module('coolApp.controller', [])
 	.controller('JobHistoryController', ['$rootScope','$scope','$http','NgTableParams', '$resource', '$timeout','$filter', function($rootScope,$scope, $http, ngTableParams, $resource,$timeout,$filter){	
 		
-		
+		$scope.expanded = false;
 		$scope.fetchAll = function(){
 			
 			/*$http({method:'GET', url:'~cool-quartz/history'})

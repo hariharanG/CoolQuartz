@@ -11,23 +11,55 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body">
-				
-				<table ng-table="tableParams" class="table table-bordered table-striped">
-					<tr ng-repeat="history in $data track by history.entryId ">
-						<td data-title="'Entry ID'" sortable="'entryId'"> {{history.entryId}}	</td>
-						<td data-title="'Hostname'" sortable="'hostname'"> {{history.hostname}} 	</td>
-						<td data-title="'IP-Address'" sortable="'ipAddress'"> {{history.ipAddress}} 	</td>
-						<td data-title="'SchedulerName'" sortable="'schedulerName'"> {{history.schedulerName}} 	</td>
-						<td data-title="'JobName'" sortable="'jobName'">{{history.jobName}}</td>
-						<td data-title="'JobGroup'" sortable="'jobGroup'">{{history.jobGroup}}</td>
-						<td data-title="'TriggerName'" sortable="'triggerName'">{{history.triggerName}}</td>
-						<td data-title="'TriggerGroup'" sortable="'ipAddress'">{{history.triggerGroup}}</td>
-						<td data-title="'FiredTime'" sortable="'ipAddress'">{{history.firedTime}}</td>
-						<td data-title="'Status'" sortable="'ipAddress'">{{history.result}}</td>
-					</tr>
-				</table>
+				<div class="table-responsive" loading-container="tableParams.settings().$loading">				
+					<table ng-table="tableParams" class="table table-bordered table-striped">
+						<tbody ng-repeat="history in $data ">
+							<tr> <!-- track by history.entryId  -->					
+								<!-- 
+								<td data-title="'#'" sortable="'#'">
+								{{$index + 1}}
+								</td> 
+								-->						
+								<td data-title="'Expand'" sortable="'expand'" align="center"   title="View (more) click here">
+		                            <img alt="" class="xpand" src="app/icons/expand_add.png" ng-show="!expanded" ng-click="expanded = true" />
+		                            <img alt="" class="xpand" src="app/icons/collapse_minus.png" ng-hide="!expanded" ng-click="expanded = !expanded"  title="Click row below to collapse">
+		                        </td> 
+								<td data-title="'Entry ID'" sortable="'entryId'"> {{history.entryId}}	</td>
+								<td data-title="'Hostname'" sortable="'hostname'"> {{history.hostname}} 	</td>
+								<td data-title="'IP-Address'" sortable="'ipAddress'"> {{history.ipAddress}} 	</td>
+								<td data-title="'SchedulerName'" sortable="'schedulerName'"> {{history.schedulerName}} 	</td>
+								<td data-title="'JobName'" sortable="'jobName'">{{history.jobName}}</td>								
+								<td data-title="'Status'" sortable="'result'">{{history.result}}</td>
+								
+		                    </tr>
+		                    <!-- Expand option -->
+							<tr ng-show="expanded" class="xpand"  ng-click="expanded = false" title="Click row to close">								
+	                            <td colspan="1">	                            	                                
+	                            	<img alt="" class="xpand" src="app/icons/collapse_minus.png"  />
+	                            </td>	                            
+	                            <td colspan="1" data-title="'JobGroup'" sortable="'jobGroup'"><b>JobGroup:</b> {{history.jobGroup}}</td>
+								<td colspan="1" data-title="'TriggerName'" sortable="'triggerName'"><b>TriggerName:</b> {{history.triggerName}}</td>
+								<td colspan="1" data-title="'TriggerGroup'" sortable="'triggerGroup'"><b>TriggerGroup:</b> {{history.triggerGroup}}</td>
+								<td colspan="1" data-title="'FiredTime'" sortable="'firedTime'"><b>Fired:</b> {{history.firedTime | date:'medium' }}</td>
+	                        </tr>
+	                        
+		                    <!--  if there is no data -->
+	                        <tr >
+	                            <td ng-show="$data.length==0" colspan="7" >
+	                                No data               
+	                            </td>
+	                        </tr> 
+						</tbody>
+					</table>
+				</div>
 				
 			</div>
 		</div>
 	</div>
 </div>
+<style>
+.xpand{
+cursor:pointer;
+text-align:center;
+}
+</style>
