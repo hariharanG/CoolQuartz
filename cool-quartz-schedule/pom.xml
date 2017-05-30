@@ -11,7 +11,8 @@
   <description>Quartz Scheduling</description>  
   <packaging>jar</packaging>
   
-<!--   <build>
+<!-- Custom Jar creation    
+  <build>
   	<plugins>
   		<plugin>
       		Build an executable JAR

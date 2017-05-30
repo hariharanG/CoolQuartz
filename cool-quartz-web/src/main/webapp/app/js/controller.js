@@ -1,6 +1,18 @@
 'use strict';
 
 angular.module('coolApp.controller', [])
+	.controller('SchedulerAdminController', ['$scope','$http', function($scope,$http){
+		
+	}])
+	
+	.controller('SchedulerInfoController', ['$scope','$http', function($scope,$http){
+		
+	}])
+	
+	.controller('JobMgmtController', ['$scope','$http', function($scope,$http){
+		
+	}])
+	
 	.controller('JobHistoryController', ['$rootScope','$scope','$http','NgTableParams', '$resource', '$timeout','$filter', function($rootScope,$scope, $http, ngTableParams, $resource,$timeout,$filter){	
 		
 		$scope.expanded = false;
