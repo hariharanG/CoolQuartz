@@ -9,11 +9,11 @@
 	<name>CoolQuartz</name>
   	<description>Quartz Scheduling</description>
   	<!-- Sprin boot configuration -->
-  	<parent>
+  	<!-- <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.2.RELEASE</version>
-    </parent>
+    </parent> -->
 
 	<properties>
 		<jdk.v>1.8</jdk.v>
@@ -138,7 +138,7 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.v}</version>
 		</dependency>
-
+		
 	</dependencies>
 	
 	<build>

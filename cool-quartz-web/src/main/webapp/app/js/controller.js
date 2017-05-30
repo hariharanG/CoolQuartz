@@ -4,19 +4,17 @@ angular.module('coolApp.controller', [])
 	.controller('JobHistoryController', ['$rootScope','$scope','$http','NgTableParams', '$resource', '$timeout','$filter', function($rootScope,$scope, $http, ngTableParams, $resource,$timeout,$filter){	
 		
 		$scope.expanded = false;
+		//$rootScope.totalJobsCount = 0;
 		$scope.fetchAll = function(){
 			
-			/*$http({method:'GET', url:'~cool-quartz/history'})
+			$http({method:'GET', url:'~cool-quartz/jobs'})
 				.success(function(originalData, status, headers, config){
-					$scope.result = originalData ;
-					$scope.totalJobHistory = $scope.result.length;
-					$scope.histories = $scope.result.content;
-					//$("#example2").DataTable();
-					
+					$rootScope.totalJobsCount = originalData.length;	
+					console.log(originalData.length)
 				})
 				.error(function(data, status, headers, config){
 					//log('Ajax Error ');
-			});	*/		
+			});		
 			
 		    var Api = $resource("~cool-quartz/history");
 
