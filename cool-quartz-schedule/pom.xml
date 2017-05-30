@@ -4,7 +4,7 @@
     <groupId>cool.hari</groupId>
     <artifactId>cool-quartz</artifactId>
     <version>1.0</version>
-  </parent>
+  </parent>   
   
   <artifactId>cool-quartz-schedule</artifactId>
   <name>CoolQuartzSchedule</name>
@@ -35,4 +35,63 @@
   </build>
   -->
   
+  <!-- Spring boot conf starts here -->
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter</artifactId>
+	    <version>1.5.2.RELEASE</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-jdbc</artifactId>
+	    <version>1.5.2.RELEASE</version>
+	    <exclusions>
+	        <exclusion>
+	            <groupId>org.apache.tomcat</groupId>
+	            <artifactId>tomcat-jdbc</artifactId>
+	        </exclusion>
+	    </exclusions>
+	</dependency>
+	<!-- connection pools -->
+	<dependency>
+	    <groupId>com.zaxxer</groupId>
+	    <artifactId>HikariCP</artifactId>
+	    <version>2.6.0</version>
+	</dependency>
+		
+
+  </dependencies>
+  
+  <build>
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<filtering>true</filtering>
+		</resource>
+	</resources>
+
+	<plugins>
+
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+		<!-- 
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+			</configuration>
+		</plugin> 
+		-->
+	</plugins> 
+  </build>
+<!-- Spring boot conf ends here -->
+
+
 </project>
